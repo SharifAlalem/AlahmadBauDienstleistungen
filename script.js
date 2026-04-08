@@ -34,17 +34,28 @@ function initMobileMenu() {
     }
 }
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
+// Set active nav link based on current page
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
-    // Add active class to current nav link
-    const currentPage = window.location.pathname;
     document.querySelectorAll('.nav-menu a').forEach(link => {
-        if (link.getAttribute('href') === currentPage.split('/').pop()) {
+        const href = link.getAttribute('href');
+        const linkPage = href.split('/').pop();
+        
+        // Remove active class from all links
+        link.classList.remove('active');
+        
+        // Add active class to matching link
+        if (linkPage === currentPage) {
             link.classList.add('active');
         }
     });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
+    setActiveNavLink();
 });
 
 // Handle window resize

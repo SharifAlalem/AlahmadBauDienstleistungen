@@ -27,7 +27,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
-    color: #003d82;
+    color: #273E26;
     font-weight: 600;
 }
 
@@ -58,7 +58,7 @@ p {
 /* ==================== Navigation ==================== */
 
 .navbar {
-    background-color: #003d82;
+    background-color: #92927B;
     color: white;
     padding: 1rem 0;
     position: sticky;
@@ -73,10 +73,20 @@ p {
     align-items: center;
 }
 
+.nav-brand a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .nav-brand h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: white;
     margin: 0;
+    font-weight: 300;
+    color: #273E26;
+    text-transform: uppercase;
 }
 
 .nav-menu {
@@ -86,7 +96,7 @@ p {
 }
 
 .nav-menu a {
-    color: white;
+    color: #273E26;
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
@@ -115,7 +125,7 @@ p {
 
 .btn-primary {
     background-color: #ffc107;
-    color: #003d82;
+    color: #273E26;
 }
 
 .btn-primary:hover {
@@ -126,7 +136,7 @@ p {
 
 .btn-light {
     background-color: white;
-    color: #003d82;
+    color: #273E26;
 }
 
 .btn-light:hover {
@@ -140,7 +150,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(0deg, #003d82 0%, #0052a3 100%);
+    background: linear-gradient(0deg, #273E26 0%, #92927B 100%);
     color: white;
     padding: 4rem 2rem;
     gap: 3rem;
@@ -222,9 +232,10 @@ p {
 }
 
 .service-card:hover {
+    cursor: pointer;
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 61, 130, 0.15);
-    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+    background: linear-gradient(135deg, #92927B 0%, #59594b 100%);
 }
 
 .service-icon {
@@ -253,7 +264,7 @@ p {
 
 .why-choose-us {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
+    background: linear-gradient(0deg, #273E26 0%, #92927B 100%);
     color: white;
 }
 
@@ -291,6 +302,51 @@ p {
 
 .feature p {
     color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==================== References Section ==================== */
+
+.references {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.reference-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.reference-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.reference-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.reference-card:hover img {
+    transform: scale(1.05);
+}
+
+.references-cta {
+    text-align: center;
 }
 
 /* ==================== Reviews Section ==================== */
@@ -344,7 +400,7 @@ p {
 /* ==================== CTA Section ==================== */
 
 .cta {
-    background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
+     background: linear-gradient(0deg, #273E26 0%, #92927B 100%);
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -364,7 +420,7 @@ p {
 /* ==================== Page Header ==================== */
 
 .page-header {
-    background: linear-gradient(0deg, #003d82 0%, #0052a3 100%);
+   background: linear-gradient(0deg, #273E26 0%, #92927B 100%);
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -414,7 +470,7 @@ p {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #003d82;
+    color: #273E26;
     font-weight: 600;
 }
 
@@ -472,7 +528,7 @@ p {
 }
 
 .info-box h3 {
-    color: #003d82;
+    color: #273E26;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
@@ -483,7 +539,7 @@ p {
 }
 
 .info-box a {
-    color: #003d82;
+    color: #273E26;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -518,7 +574,7 @@ p {
 /* ==================== Footer ==================== */
 
 .footer {
-    background-color: #003d82;
+    background-color: #273E26;
     color: white;
     padding: 3rem 0 1rem;
 }
@@ -557,6 +613,46 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
+}
+
+/* ==================== Gallery Page ==================== */
+
+.gallery-container {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
 }
 
 /* ==================== Responsive Design ==================== */
@@ -605,6 +701,19 @@ p {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .references-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-item {
+        height: 200px;
     }
 
     .reviews-grid {
