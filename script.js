@@ -23,15 +23,32 @@ if (contactForm) {
 }
 
 // Mobile menu toggle functionality (if needed for mobile nav)
+let mobileMenuInitialized = false;
 function initMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Add mobile menu button if needed
-    const navbar = document.querySelector('.navbar');
-    
-    if (window.innerWidth <= 768) {
-        // Mobile-specific functionality can be added here
+    if (mobileMenuInitialized) {
+        return;
     }
+    mobileMenuInitialized = true;
+
+    const navbar = document.querySelector('.navbar');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (!navbar || !mobileNavToggle) {
+        return;
+    }
+
+    mobileNavToggle.addEventListener('click', function() {
+        const isOpen = navbar.classList.toggle('nav-open');
+        this.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navbar.classList.remove('nav-open');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
 }
 
 // Set active nav link based on current page
@@ -60,7 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Handle window resize
 window.addEventListener('resize', function() {
-    initMobileMenu();
+    const navbar = document.querySelector('.navbar');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    if (navbar && window.innerWidth > 768) {
+        navbar.classList.remove('nav-open');
+        if (mobileNavToggle) {
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+        }
+    }
 });
 
 // Intersection Observer for fade-in animations
